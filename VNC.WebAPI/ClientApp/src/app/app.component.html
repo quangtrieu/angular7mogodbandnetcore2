@@ -1,0 +1,32 @@
+﻿
+<mat-toolbar color="primary" class="header">
+    <div>Admin VNC APIs</div>
+    <span class="nav-tool-items">
+      <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+    </span>
+    <div *ngIf="currentUser"><a class="nav-item nav-link navbar-right" (click)="logout()">Logout</a></div>
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <!-- Sidenav -->
+    <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+      [fixedTopGap]>
+      <mat-nav-list *ngIf="currentUser">
+        <a mat-list-item routerLinkActive="active" routerLink="/RoleList">
+          <mat-icon>format_list_bulleted</mat-icon> View Role
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/Employee-list">
+          <mat-icon>format_list_bulleted</mat-icon> View User
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/TokenList">
+          <mat-icon>format_list_bulleted</mat-icon> View Token
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Main content -->
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

@@ -1,0 +1,55 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>User Information</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+  
+     
+      <form #form="ngForm">
+        <div>
+  
+          <mat-form-field style="width:300px; margin-right:10px;">
+            <input matInput name="UserName" readonly #UserName
+                   value="{{userDetailViewModel.user.userName}}"
+                   placeholder="User Name">
+          </mat-form-field>
+          <mat-form-field style="width:300px; font: bold">
+        <!--     <mat-icon matSuffix>edit</mat-icon> -->
+            <input matInput name="EmailAddress" #EmailAddress value="{{userDetailViewModel.user.emailAddress}}"
+                   [(ngModel)]="userDetailViewModel.user.emailAddress"
+                   placeholder="EmailAddress">
+          </mat-form-field>
+          <!-- <div style="clear:both;"></div>
+  
+          <mat-form-field style="width:600px">
+            <textarea matInput name="LongDescription" rows="5" wrap="soft"
+                      readonly #LongDescription placeholder="Overview">
+                    {{productDetailViewModel.product.longDescription}}
+            </textarea>
+          </mat-form-field>
+  
+          <div style="clear:both;"></div>
+  
+          <mat-form-field style="width:300px; margin-right:10px;">
+            <input matInput name="UnitPrice" readonly #UnitPrice
+                   value="{{productDetailViewModel.product.unitPrice | currency}}"
+                   placeholder="Unit Price">
+          </mat-form-field>
+  
+          <mat-form-field style="width:300px; font: bold">
+            <mat-icon matSuffix>edit</mat-icon>
+            <input matInput name="OrderQuantity" #OrderQuantity value="{{productDetailViewModel.orderQuantity}}"
+                   [(ngModel)]="productDetailViewModel.orderQuantity"
+                   placeholder="Order Quantity">
+          </mat-form-field> -->
+        </div>
+      </form>
+  
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" (click)="UpdateUser()">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+  

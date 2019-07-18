@@ -1,0 +1,19 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="50%" fxFlex.xs="100%">
+      <mat-card-title>Details for the clicked Role</mat-card-title>
+      <hr/>
+      <mat-card-content>
+        <div fxLayout="column wrap">
+          <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Role Name :</strong></div>
+            <div fxFlex>{{role?.name}}</div>
+          </div>
+          <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>description:</strong></div>
+            <div fxFlex>{{role?.description}}</div>
+          </div>
+    
+        </div>
+      </mat-card-content>
+    </mat-card>
+</section>

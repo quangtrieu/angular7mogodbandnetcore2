@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Token List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>User Name</th>
+          <th>Token Key</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let e of tokenList let i = index ">
+          <td>{{i+1}}</td>
+          <td class="tblUserName">{{e.userName}}</td>
+          <td class="tblkey">
+            <div style="word-wrap: break-word; width: 800px">
+                {{e.tokenKey}}
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

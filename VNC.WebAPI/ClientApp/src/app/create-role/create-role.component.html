@@ -1,0 +1,42 @@
+<div class="container">
+    <mat-card>
+        <mat-toolbar color="accent">  
+            <div style="text-align: center;">  
+             Add role
+            </div>    
+          </mat-toolbar>
+    <br><br>
+      <mat-card-content>
+        <form [formGroup]="roleForm" (ngSubmit)="onFormSubmit(roleForm.value)">
+                <table>
+                  <tr>
+                    <td class="tbl1">
+                      <mat-form-field class="demo-full-width">
+                        <input formControlName="Name" matTooltip="Enter Role Name" matInput placeholder="Role Name">
+                      </mat-form-field>
+                      <mat-error>
+                        <span *ngIf="!roleForm.get('Name').value && roleForm.get('Name').touched"></span>
+                      </mat-error>
+                    </td>
+                    <td class="tbl1">
+                      <mat-form-field class="demo-full-width">
+                        <input formControlName="Description" matTooltip="Enter Description" matInput placeholder="Description">
+                      </mat-form-field>
+                      <mat-error>
+                        <span *ngIf="!roleForm.get('Description').value && roleForm.get('Description').touched"></span>
+                      </mat-error>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td  class="content-center">
+                      <button type="submit" mat-raised-button color="accent" matTooltip="Click Submit Button" [disabled]="!roleForm.valid">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button type="reset" mat-raised-button color="accent" matTooltip="Click Reset Button" (click)="resetForm()">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button type="cancel" mat-raised-button color="accent" class="btn btn-primary" matTooltip="Click Cancel Button" (click)="cancelForm()">Back to Role List</button>
+                    </td>
+                  </tr>
+                </table>
+        </form>
+      </mat-card-content>
+    </mat-card>
+</div>

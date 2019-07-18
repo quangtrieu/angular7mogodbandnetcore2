@@ -1,0 +1,87 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>User</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <form #form="ngForm">
+      <div>
+        <mat-form-field style="width:300px">
+          <input matInput name="Name" #userName value="{{userInquiryViewModel.userName}}"
+                 [(ngModel)]="userInquiryViewModel.userName"
+                 placeholder="userName #">
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field style="width:300px">
+          <input matInput name="Name" #useremailAddress value="{{userInquiryViewModel.emailAddress}}"
+                 [(ngModel)]="userInquiryViewModel.emailAddress"
+                 placeholder="EmailAddress">
+        </mat-form-field>
+        &nbsp;
+        <button mat-flat-button color="primary" (click)="filteredSearch()">Search</button>&nbsp;
+        &nbsp;
+        <button mat-flat-button color="primary" (click)="resetSearch()">Reset</button>&nbsp;
+        &nbsp;
+        <button mat-flat-button color="primary" (click)="resetSearch()">Create New</button>&nbsp;
+      </div>
+    </form>
+
+    <mat-paginator [length]="userInquiryViewModel.totalUsers" [showFirstLastButtons]="true" [pageIndex]="userInquiryViewModel.currentPageIndex"
+                   [pageSize]="userInquiryViewModel.pageSize" [pageSizeOptions]="userInquiryViewModel.pageSizeOptions"
+                   (page)="onPaginateChange($event)"></mat-paginator>
+
+    <span class="example-container mat-elevation-z8">
+      <mat-table #table [dataSource]="userInquiryViewModel.users"
+                 matSort (matSortChange)="sortData($event)"
+                 [class.isMobile]="isMobile">
+
+        <ng-container matColumnDef="userName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header="UserName">User Name #</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span class="mobile-label" style="min-width:100px; text-align:right;">userName&nbsp;#:&nbsp;&nbsp;</span>
+            {{element.userName}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="emailAddress">
+          <mat-header-cell *matHeaderCellDef mat-sort-header="EmailAddress">Email Address</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span class="mobile-label" style="min-width:100px; text-align:right;">Email Address:&nbsp;&nbsp;</span>
+            {{element.emailAddress}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="expiresIn">
+          <mat-header-cell *matHeaderCellDef>ExpiresIn</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span class="mobile-label" style="min-width:100px; text-align:right;">Overview:&nbsp;&nbsp;</span>
+            {{element.expiresIn}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="limitedTotal">
+          <mat-header-cell *matHeaderCellDef>Limited Total</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span class="mobile-label" style="min-width:100px; text-align:right;">Overview:&nbsp;&nbsp;</span>
+            {{element.limitedTotal}}
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="userInquiryViewModel.displayedColumns"></mat-header-row>
+        <mat-row style="cursor: pointer;" (click)="selectUser(i)" *matRowDef="let row; columns: userInquiryViewModel.displayedColumns; let i = index"></mat-row>
+      </mat-table>
+
+    </span>
+
+
+  </mat-card-content>
+  <mat-card-actions>
+
+    <mat-paginator [length]="userInquiryViewModel.totalUsers" [showFirstLastButtons]="true" [pageSize]="userInquiryViewModel.pageSize"
+                   [pageIndex]="userInquiryViewModel.currentPageIndex" [pageSizeOptions]="userInquiryViewModel.pageSizeOptions"
+                   (page)="onPaginateChange($event)">
+    </mat-paginator>
+
+  </mat-card-actions>
+</mat-card>

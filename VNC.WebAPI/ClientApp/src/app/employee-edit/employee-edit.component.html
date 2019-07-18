@@ -1,0 +1,97 @@
+<div class="container">
+    <mat-card>
+        <mat-toolbar color="accent">  
+            <div style="color:white;text-align: center;">  
+             Edit User
+            </div>    
+          </mat-toolbar>
+    <br><br>
+      <mat-card-content>
+        <form [formGroup]="employeeForm" (ngSubmit) = "onFormSubmit(employeeForm.value)">
+                <table>
+                  <tr>
+                    <td class="tbl1">
+                      <mat-form-field class="demo-full-width">
+                        <input readonly formControlName="UserName" matTooltip="Enter Name" matInput placeholder="UserName">
+                      </mat-form-field>
+                      <mat-error>
+                        <span *ngIf="!employeeForm.get('UserName').value && employeeForm.get('UserName').touched"></span>
+                      </mat-error>
+                    </td>
+                    <td class="tbl1">
+                      <mat-form-field class="demo-full-width">
+                        <input formControlName="EmailAddress" matTooltip="Enter Password" matInput placeholder="EmailAddress">
+                      </mat-form-field>
+                      <mat-error>
+                        <span *ngIf="!employeeForm.get('EmailAddress').value && employeeForm.get('EmailAddress').touched"></span>
+                      </mat-error>
+                    </td>
+                    <td class="tbl1">
+                        <mat-form-field class="demo-full-width">
+                          <input matInput [matDatepicker]="picker" matTooltip="Enter ExpiresIn" formControlName="ExpiresIn" placeholder="Choose ExpiresIn">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        <mat-error>
+                          <span *ngIf="!employeeForm.get('ExpiresIn').value && employeeForm.get('ExpiresIn').touched"></span>
+                        </mat-error>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="tbl1">
+                          <span>Gender</span>
+                          <br><br>
+                          <mat-radio-group matTooltip="Enter Gender" formControlName="Gender">
+                              <mat-radio-button value="0">Male</mat-radio-button>&nbsp;&nbsp;
+                              <mat-radio-button value="1">Female</mat-radio-button>
+                            </mat-radio-group>
+                          <mat-error>
+                            <span *ngIf="!employeeForm.get('Gender').value && employeeForm.get('Gender').touched"></span>
+                          </mat-error>
+                      </td>  
+              
+                      <td class="tbl1">
+                          <span>Internal/External</span>
+                          <br><br>
+                          <mat-radio-group matTooltip="Enter InExuer" formControlName="InExuer">
+                              <mat-radio-button value="0">Internal</mat-radio-button>&nbsp;&nbsp;
+                              <mat-radio-button value="1">External</mat-radio-button>
+                            </mat-radio-group>
+                          <mat-error>
+                            <span *ngIf="!employeeForm.get('InExuer').value && employeeForm.get('InExuer').touched"></span>
+                          </mat-error>
+                      </td>
+                      <td class="tbl1">  
+                          <mat-form-field class="demo-full-width">  
+                              <input matInput type="number" formControlName="LimitedTotal" matTooltip="Enter limitedTotal" matInput placeholder="LimitedTotal">
+                          </mat-form-field>  
+                          <mat-error>  
+                              <span *ngIf="!employeeForm.get('LimitedTotal').value && employeeForm.get('LimitedTotal').touched"></span>  
+                          </mat-error>  
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="tbl1">
+                          <mat-form-field>
+                              <mat-select formControlName ="RoleDetails"  placeholder = "Role Name" multiple>
+                                  <mat-option *ngFor="let role of rolesList" [value]="role" >{{ role.name }}</mat-option>
+                              </mat-select>
+                          </mat-form-field>
+                      </td>
+                  </tr>
+                  <tr>
+                      <br><br>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td  class="content-center">
+                      <button type="submit" mat-raised-button color="accent" class="btn btn-primary" matTooltip="Click Submit Button" [disabled]="!employeeForm.valid">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button type="reset" mat-raised-button color="accent" class="btn btn-primary"matTooltip="Click Reset Button" (click)="resetForm()">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button type="cancel" mat-raised-button color="accent" class="btn btn-primary" matTooltip="Click Cancel Button" (click)="cancelForm()">Back to user List</button>
+                    </td>
+                  </tr>
+                </table>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

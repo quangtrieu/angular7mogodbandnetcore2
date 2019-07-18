@@ -1,0 +1,18 @@
+export const SYSTEM_MESSAGES = {
+    CM0001: 'Record already exists.',
+    CM0002: 'Record does not exist. ',
+    CM0003: 'Please fill in all required fields.',
+    CM0004: 'Required.',
+    CM0005: 'A new record has been added.',
+    CM0006: 'Record has been updated.',
+    CM0007: 'Record already in use in other session(s).',
+    CM0008: 'Do you want to delete the record(s)?',
+    CM0009: 'Record deleted.',
+    CM0010: 'Sorry, an error has occurred. Please try again.',
+    CM0011: 'Invalid format.',
+    CM0012: 'Period is closed.',
+    CM0013: 'Period is not opened.',
+    CM0014: 'Please select a record.',
+    CM0015: 'Invalid value',
+    CM0016: 'Record cannot be deleted.',
+  };  

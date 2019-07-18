@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px!important;
+}
+  
+  td, th {
+    width: 0%;
+  }
+  th{
+    font-size: 15px;
+    font-weight: bold;
+  }
+  th{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  }

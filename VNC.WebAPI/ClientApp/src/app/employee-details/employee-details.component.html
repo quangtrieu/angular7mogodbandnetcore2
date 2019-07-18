@@ -1,0 +1,34 @@
+  <section fxLayout="row wrap" fxLayoutAlign="center center">
+      <mat-card fxFlex="500px" fxFlex.xs="100%">
+          <mat-card-title>Details for the clicked User</mat-card-title><hr/>
+          <mat-card-content>
+            <div fxLayout="column wrap" fxLayoutGap="10px">
+              <div fxLayout="row wrap" fxFlex>
+                <div fxFlex><strong>User Name:</strong></div>
+                <div fxFlex>{{user.entity?.userName}}</div>
+              </div>
+        
+              <div fxLayout="row wrap" fxFlex>
+                <div fxFlex><strong>ExpiresIn:</strong></div>
+                <div fxFlex>{{user.entity?.expiresIn | date :'dd/MM/yyyy hh:mm:ss a'}}</div>
+              </div>
+
+              <div fxLayout="row wrap" fxFlex>
+                  <div fxFlex><strong>EmailAddress:</strong></div>
+                  <div fxFlex>{{user.entity?.emailAddress}}</div>
+              </div>
+              <div fxLayout="row wrap" fxFlex>
+                  <div fxFlex><strong>LimitedTotal:</strong></div>
+                  <div fxFlex>{{user.entity?.limitedTotal}}</div>
+              </div>
+              <div fxLayout="row wrap" fxFlex>
+                  <div fxFlex><strong>User TokenTotal:</strong></div>
+                  <div fxFlex>{{user.entity?.userTokenTotal}}</div>
+              </div>
+            </div>
+          </mat-card-content>
+          <div>
+              <button (click)="list()" class="btn btn-primary">Back to User List</button>
+          </div>
+        </mat-card>
+  </section>

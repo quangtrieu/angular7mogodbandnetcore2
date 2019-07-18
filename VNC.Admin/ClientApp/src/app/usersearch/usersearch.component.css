@@ -1,0 +1,128 @@
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-table {
+    overflow: auto;
+  }
+  
+  .mobile-label {
+    display: none;
+  }
+  
+  .mat-column-longDescription {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+  }
+  
+  .mat-column-productNumber {
+    max-width: 100px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .mat-column-description {
+    max-width: 200px;
+  }
+  
+  .unit-price {
+    width: 80%;
+    text-align: right;
+  }
+  
+  .quantity-onhand {
+    width: 80%;
+    text-align: right;
+  }
+  
+  .mat-column-quantityOnHand {
+    width: 100px;
+    max-width: 100px;
+    text-align: right;
+  }
+  
+  .mat-column-unitPrice {
+    width: 100px;
+    max-width: 100px;
+    text-align: right;
+  }
+  
+  @media(max-width: 800px) {
+    .mobile-label {
+      display: block;
+      font-weight: bold;
+    }
+  
+    .mat-header-row {
+      display: none;
+    }
+  
+    .mat-row {
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 5px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+  
+    .mat-cell {
+      margin: 0px;
+      padding: 5px;
+    }
+  
+    .mat-column-productNumber {
+      text-decoration: none;
+      white-space: nowrap;
+      padding-left: 2px;
+      padding-right: 5px;
+      min-width: 98%;
+      width: 98%;
+    }
+  
+    .mat-column-description {
+      white-space: nowrap;
+      padding-left: 2px;
+      padding-right: 5px;
+      min-width: 98%;
+      width: 98%;
+    }
+  
+    .mat-column-longDescription {
+      min-width: 98%;
+      width: 98%;
+      padding-left: 2px;
+      padding-right: 5px;
+    }
+  
+    .mat-column-unitPrice {
+      white-space: nowrap;
+      text-align: left;
+      padding-left: 2px;
+      padding-right: 5px;
+      min-width: 98%;
+      width: 98%;
+    }
+  
+  
+    .mat-column-quantityOnHand {
+      white-space: nowrap;
+      text-align: left;
+      padding-left: 2px;
+      padding-right: 5px;
+      min-width: 98%;
+      width: 98%;
+    }
+  
+    .unit-price {
+      text-align: left;
+    }
+  
+    .quantity-onhand {
+      text-align: left;
+    }
+  
+  }
+  
